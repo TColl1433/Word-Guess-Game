@@ -9,16 +9,27 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <script src="assets/javascript/game.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Popstars of the 80s</title>
+
 </head>
 
 <body>
+
+    <style>
+        body {
+            background-image: url(assets/images/bckgndimg.png)
+        }
+    </style>
+
     <div class="container">
         <div class="jumbotron text-center">
             <div>
                 <h5>Pop Stars of the 80s</h5>
                 <p id="directions-text">Press any key start playing!</p>
+                <h5 class="text-center" id="wintotal">Number of Wins:</h5>
+                <h5 class="text-center" id="guesses">You have 10 guesses left</h5>
             </div>
         </div>
     </div>
@@ -31,74 +42,8 @@
     </div>
 
 
-    <script>
-        //var $ = function (id) {
-        //return document.getElementById();
-        //}
 
-        // Create variables that hold references to the places in the HTML where we want to display things.
-
-
-        //declaring Arrays
-        var game = ["Madonna", "Prince", "Tina Turner", "Cindi Lauper"]
-        //these variables give you random options from "var game"
-        var choice = Math.floor(Math.random() * 4);
-        var answer = game[choice];
-        var myLength = answer.length;
-        var display = [myLength];
-        var win = myLength;
-        var letters = answer.split("");
-        var attemptsLeft = 10;
-        var output = "";
-
-
-        //console.log(answer);
-
-        var setup = function () {
-            for (var i = 0; i < answer.length; i++) {
-                display[i] = "_ ";
-                output = output + display[i];
-            }
-            document.getElementById("empty-div").innerHTML = output;
-            output = "";
-        }
-
-        document.onkeyup = function () {
-            var userGuess = event.key;
-            output = "";
-
-            for (var j = 0; j < answer.length; j++) {
-
-                if (userGuess == letters[j]) {
-                    display[j] = userGuess;
-                    win--;
-                }
-
-                output = output + display[j] + " ";
-            }
-            document.getElementById("empty-div").innerHTML = output;
-            output = " ";
-            attemptsLeft--;
-            if (win < 1) {
-                document.getElementById("guesses").innerHTML = "YOU WIN!";
-            } else if (attemptsLeft < 1) {
-                document.getElementById("guesses").innerHTML = "YOU LOSE!";
-            } else {
-                document.getElementById("guesses").innerHTML = "You have " + attemptsLeft + " guesses left"
-            }
-        }
-        window.onload = setup();
-
-    </script>
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
