@@ -6,12 +6,16 @@
 // Create variables that hold references to the places in the HTML where we want to display things.
 
 
-//declaring Arrays
+//declaring variable Arrays answers
 var game = ["Madonna", "Prince", "Tina Turner", "Cindi Lauper"]
+
 //these variables give you random options from "var game"
 var choice = Math.floor(Math.random() * 4);
+//this takes the choice from above line and applys the random array
 var answer = game[choice];
+//
 var myLength = answer.length;
+
 var display = [myLength];
 var win = myLength;
 var letters = answer.split("");
