@@ -1,4 +1,33 @@
-.body {
-    background-image: pink;
+body {
+    background-image: url("../images/bckgndimg.png");
 }
-/* url(../assets/images/bckgndimg.png) */
+
+.container{
+    margin-top: 60px;
+}
+
+div {
+    opacity: 0.91;
+    }
+
+ h3{
+    color: magenta;
+    font-size: 50px;
+    font-family: 'Monoton', cursive;
+    letter-spacing: 5px;
+}
+
+h5{
+    color: magenta;
+}
+
+.btn-primary{
+    margin-left: 380px;
+    margin-right: 380px;
+    border-radius: 10px;
+  
+
+    
+   
+
+}
