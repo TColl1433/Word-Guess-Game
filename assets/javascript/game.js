@@ -2,7 +2,6 @@
 
 
 
-
 // All of the below variables are outside of the functions they are what's known as a global scope. 
 //They can be used in any function below.
 
@@ -32,7 +31,6 @@ var attemptsLeft = 10;
 var output = "";
 //My attempt to add a start button
 var startBtn = document.getElementById("startBtn");
-
 
 
 
@@ -103,3 +101,9 @@ document.onkeyup = function () {
     }
 }
 window.onload = initialize();
+
+
+//I tried to add functionality to the start button. I wanted to make it refresh the page. I ran outta time. couldnt't figure it out:-(
+// function onclick() {
+//     window.onload = initialize();
+// }
