@@ -10,7 +10,6 @@ var game = ["MADONNA", "PRINCE", "TINA TURNER", "CINDI LAUPER", "BOY GEORGE"]
 
 //this variable gives you random options from "var game"
 var choice = Math.floor(Math.random() * game.length);
-console.log(choice)
 //this takes the choice from above line and picks a choice from the random array
 var answer = game[choice];
 //this takes the length of the answer and gives the correct number of spaces for the answer. It counts the letters in the word answer.
@@ -25,25 +24,35 @@ var win = myLength;
 //I orginally thought I was going to have to declare a separate array for each letter in the alphabet; I think the above takes care of that!
 var letters = answer.split("");
 
+//my array.join("")
+
 //Pretty self explanatory!
 var attemptsLeft = 10;
 //Output is equal to nothing. This is how the blank spaces will be displayed in the GUI
 var output = "";
 //My attempt to add a start button
-var startBtn = document.getElementById("startBtn");
+var startBtn = document.getElementById("StartBtn");
+console.log(typeof (startBtn));
+
+//here I am attempting to make a functioning start button
+document.getElementById("StartBtn").addEventListener('click', function () {
+    location.reload();
+    // initialize()
+})
+// document.onclick = function () {
+//     output = startBtn;
 
 
-
-
+// }
 
 
 //this "iterates" through the variable array and displays an underscore for each letter          
-var initialize = function () {
+function initialize() {
 
-    //here I am attempting to make a functioning start button
+    console.log("initialized")
 
-    //document.onclick = function () {
-    // output = startBtn;
+
+
 
     //this is a for loop
     //var i (i stands for integer)
@@ -100,8 +109,8 @@ document.onkeyup = function () {
         document.getElementById("guesses").innerHTML = "You have " + attemptsLeft + " guesses left"
     }
 }
-window.onload = initialize();
-
+// window.onload = initialize();
+initialize()
 
 //I tried to add functionality to the start button. I wanted to make it refresh the page. I ran outta time. couldnt't figure it out:-(
 // function onclick() {
